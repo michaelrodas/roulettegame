@@ -6,11 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class InitController {
+public class WheelGameController {
     @Value("${spring.application.name}")
     String appName;
-    @Value("${application.page.index}")
-    String indexPage;
+    @Value("${application.page.wheel}")
+    String wheelPage;
     @Value("${application.prizes.1}")
     String prize1;
     @Value("${application.prizes.2}")
@@ -29,7 +29,7 @@ public class InitController {
     String prize8;
 
     @GetMapping("/game")
-    public String homePage(Model model) {
+    public String wheelGamePage(Model model) {
         model.addAttribute("appName", appName);
         model.addAttribute("prize1", prize1);
         model.addAttribute("prize2", prize2);
@@ -40,6 +40,6 @@ public class InitController {
         model.addAttribute("prize7", prize7);
         model.addAttribute("prize8", prize8);
 
-        return indexPage;
+        return wheelPage;
     }
 }
